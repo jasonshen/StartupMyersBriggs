@@ -60,6 +60,7 @@ class MyersBriggs
 	end
 
 	def scoring(answer, category)
+	end
 		
 
 	def runtest
