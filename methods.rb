@@ -43,7 +43,7 @@ class MyersBriggs
 				sleep (2)
 				puts "Sound good? Press ENTER to continue!"
 				gets.chomp
-		end
+			end
 		sleep(2)
 		puts "Let's get started!"
 		sleep(2)
@@ -69,7 +69,7 @@ class MyersBriggs
 				multiplier = 1
 			else
 				multiplier = -1
-		end
+			end
 
 		case category
 			when "E", "I"
@@ -80,18 +80,19 @@ class MyersBriggs
 				catpointer = 2
 			when "P", "J"
 				catpointer = 3
-		end
+			end
 
 		if answer == "T"
-			@mbscore[catpointer] = (multiplier * 1 + @mbscore[catpointer])
+			@mbscore[catpointer] = (multiplier * @mbscore[catpointer])
 			puts "I ran the score method and recognized the response was T"
-		else
-			@mbscore[catpointer] = (-1 * multiplier * 1 + @mbscore[catpointer])
+		if answer == "F"
+			@mbscore[catpointer] = (-1 * multiplier * @mbscore[catpointer])
 		end
 	end
 
 
 
+	end
 		
 	def input (answer)
 		while (answer != "T" && answer != "F")
@@ -127,10 +128,3 @@ class MyersBriggs
 
 
 end
-
-start = MyersBriggs.new()
-start.welcome()
-start.explanation()
-start.questiondatabase()
-start.runtest()
-start.results()
